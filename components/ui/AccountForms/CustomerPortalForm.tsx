@@ -72,6 +72,13 @@ export default function CustomerPortalForm({ subscription }: Props) {
           <Link href="/">Choose your plan</Link>
         )}
       </div>
+           {subscription && (
+        <div className="hidden special-section">
+          {/* Replace "Extra Content Here" with whatever special content you want to show */}
+          <h2>Special Access Content</h2>
+          <p>Extra content here for subscribers only.</p>
+        </div>
+      )}
     </Card>
   );
 }
