@@ -47,6 +47,13 @@ export default async function Account() {
         <NameForm userName={userDetails?.full_name ?? ''} />
         <EmailForm userEmail={user.email} />
       </div>
+            {subscription && (
+        <div className="hidden special-section">
+          {/* Replace "Extra Content Here" with whatever special content you want to show */}
+          <h2>Special Access Content</h2>
+          <p>Extra content here for subscribers only.</p>
+        </div>
+      )}
     </section>
   );
 }
