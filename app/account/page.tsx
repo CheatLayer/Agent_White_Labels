@@ -48,7 +48,7 @@ export default async function Account() {
         <EmailForm userEmail={user.email} />
       </div>
             {subscription && (
-        <div >
+        <div className="max-w-6xl px-4 py-8 mx-auto sm:px-6 sm:pt-24 lg:px-8" >
           {/* Replace "Extra Content Here" with whatever special content you want to show */}
           <h2>Special Access Content</h2>
           <p>Extra content here for subscribers only.</p>
