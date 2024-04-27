@@ -33,8 +33,9 @@ export default async function Account() {
 
 const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const key = event.target.key.value;
-    const prompt = event.target.prompt.value;
+    const formData = new FormData(event.currentTarget); // Use the form ref here
+  const key = formData.get('key') as string; // Explicitly cast the value to string
+  const prompt = formData.get('prompt') as string; // Explicitly cast the value to string
 
     // Post data to the server-side API
     const response = await fetch('/api/submitContent', {
