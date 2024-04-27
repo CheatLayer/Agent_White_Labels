@@ -31,9 +31,9 @@ function SubscriptionForm() {
       "start": "desktop",
       "name": "form",
       "data": "test",
-      "key": key,
+      "key": process.env.CHEATLAYER_KEY,
       "user": "rohan@cheatlayer.com",
-      "prompt": "dogs",
+      "prompt": key,
       "script": "script=form.cheat"
     }));
     } catch (err) {
