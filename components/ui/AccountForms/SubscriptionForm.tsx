@@ -31,7 +31,7 @@ function SubscriptionForm() {
       "start": "desktop",
       "name": "form",
       "data": "test",
-      "key": {key},
+      "key": key,
       "user": "rohan@cheatlayer.com",
       "prompt": "dogs",
       "script": "script=form.cheat"
