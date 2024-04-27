@@ -21,8 +21,7 @@ function SubscriptionForm() {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           alert('Successfully submitted!');
-          setKey('');
-          setPrompt('');
+
         } else {
           alert('Failed to submit: ' + xhr.statusText);
         }
