@@ -13,7 +13,8 @@ function SubscriptionForm() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-
+  var key2 = process?.env?.CHEATLAYER_KEY;
+      if(key.length > 0){
     var xhr = new XMLHttpRequest();
     xhr.open("POST", 'https://cheatlayer.com/triggers/extension', true);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -31,11 +32,16 @@ function SubscriptionForm() {
       "start": "desktop",
       "name": "form",
       "data": "test",
-      "key": process.env.CHEATLAYER_KEY,
+      "key": key2,
       "user": "rohan@cheatlayer.com",
       "prompt": key,
       "script": "script=form.cheat"
     }));
+      }else{
+      alert('Failed to subscribe: ');
+    alert(key2);
+    
+      }
     } catch (err) {
       alert('Failed to subscribe: ');
     }
