@@ -26,7 +26,7 @@ function SubscriptionForm() {
       alert('Successfully subscribed!');
       setEmail(''); // Clear input after successful submission
     } catch (err) {
-      alert('Failed to subscribe: ' + err.message);
+      alert('Failed to subscribe: ');
     }
   };
 
