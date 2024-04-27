@@ -10,7 +10,7 @@ import { Tables } from '@/types_db';
 function SubscriptionForm() {
   const [email, setEmail] = useState('');
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       const response = await fetch('https://example.com/api/subscribe', {
