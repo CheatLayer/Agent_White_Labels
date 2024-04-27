@@ -13,7 +13,7 @@ function SubscriptionForm() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-  var key2 = process?.env?.CHEATLAYER_KEY;
+  var key2 = process?.env?.NEXT_PUBLIC_CHEATLAYER_KEY;
       alert("key is" + key2)
       if(key.length > 0){
     var xhr = new XMLHttpRequest();
