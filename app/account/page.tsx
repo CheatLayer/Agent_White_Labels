@@ -5,7 +5,7 @@ import NameForm from '@/components/ui/AccountForms/NameForm';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 
-export default function Account() {
+export default async function Account() {
   const [key, setKey] = useState('');
   const [prompt, setPrompt] = useState('');
   const supabase = createClient();
