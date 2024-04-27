@@ -50,7 +50,7 @@ function SubscriptionForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="email" style={{ color: 'white' }}>Subscribe:</label>
+      <label htmlFor="email" style={{ color: 'white' }}>Trigger Agent with prompt and email:</label>
       <input
         type="text"
         id="key"
