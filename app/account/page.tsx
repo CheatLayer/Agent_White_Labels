@@ -37,9 +37,13 @@ export default async function Account() {
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
             Account
           </h1>
-          <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-            We partnered with Stripe for a simplified billing.
-          </p>
+         {subscription && (
+        <div className="w-full max-w-3xl m-auto my-8 border rounded-md p border-zinc-700" >
+          {/* Replace "Extra Content Here" with whatever special content you want to show */}
+          <h2>Special Access Content</h2>
+          <p>Extra content here for subscribers only.</p>
+        </div>
+      )}
         </div>
       </div>
       <div className="p-4">
@@ -47,13 +51,7 @@ export default async function Account() {
         <NameForm userName={userDetails?.full_name ?? ''} />
         <EmailForm userEmail={user.email} />
       </div>
-            {subscription && (
-        <div className="w-full max-w-3xl m-auto my-8 border rounded-md p border-zinc-700" >
-          {/* Replace "Extra Content Here" with whatever special content you want to show */}
-          <h2>Special Access Content</h2>
-          <p>Extra content here for subscribers only.</p>
-        </div>
-      )}
+        
     </section>
   );
 }
