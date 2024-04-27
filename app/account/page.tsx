@@ -4,7 +4,11 @@ import NameForm from '@/components/ui/AccountForms/NameForm';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 import { FormEvent } from 'react';
-import InteractiveForm from './InteractiveForm';  // Path might vary depending on your structure
+
+import dynamic from 'next/dynamic'
+
+// Dynamically import InteractiveForm to make sure it's treated as a client component
+const InteractiveForm = dynamic(() => import('./InteractiveForm'))
 
 export default async function Account() {
   const supabase = createClient();
