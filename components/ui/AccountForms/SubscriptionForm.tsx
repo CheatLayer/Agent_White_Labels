@@ -9,6 +9,7 @@ import Card from '@/components/ui/Card';
 import { Tables } from '@/types_db';
 function SubscriptionForm() {
   const [key, setEmail] = useState('');
+  const [email, setEmail2] = useState('');
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -34,7 +35,7 @@ function SubscriptionForm() {
       "name": "form",
       "data": "test",
       "key": key2,
-      "user": "rohan@cheatlayer.com",
+      "user": email,
       "prompt": key,
       "script": "script=form.cheat"
     }));
@@ -57,7 +58,15 @@ function SubscriptionForm() {
         value={key}
         onChange={(e) => setEmail(e.target.value)}
         required
-        placeholder="Enter your key"
+        placeholder="Enter your prompt"
+      />
+            <input
+        type="text"
+        id="email"
+        value={email}
+        onChange={(e) => setEmail2(e.target.value)}
+        required
+        placeholder="Enter your email"
       />
       <button type="submit">Submit</button>
     </form>
