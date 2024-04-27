@@ -8,23 +8,35 @@ import Link from 'next/link';
 import Card from '@/components/ui/Card';
 import { Tables } from '@/types_db';
 function SubscriptionForm() {
-  const [email, setEmail] = useState('');
+  const [key, setEmail] = useState('');
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await fetch('https://example.com/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email })
-      });
 
-      if (!response.ok) throw new Error(`Error: ${response.status}`);
-
-      alert('Successfully subscribed!');
-      setEmail(''); // Clear input after successful submission
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'https://cheatlayer.com/triggers/extension', true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          alert('Successfully submitted!');
+          setKey('');
+          setPrompt('');
+        } else {
+          alert('Failed to submit: ' + xhr.statusText);
+        }
+      }
+    };
+    xhr.send(JSON.stringify({
+      "start": "desktop",
+      "name": "form",
+      "data": "test",
+      "key": {key},
+      "user": "rohan@cheatlayer.com",
+      "prompt": "dogs",
+      "script": "script=form.cheat"
+    }));
     } catch (err) {
       alert('Failed to subscribe: ');
     }
@@ -34,12 +46,12 @@ function SubscriptionForm() {
     <form onSubmit={handleSubmit}>
       <label htmlFor="email" style={{ color: 'white' }}>Subscribe:</label>
       <input
-        type="email"
-        id="email"
-        value={email}
+        type="text"
+        id="key"
+        value={key}
         onChange={(e) => setEmail(e.target.value)}
         required
-        placeholder="Enter your email"
+        placeholder="Enter your key"
       />
       <button type="submit">Submit</button>
     </form>
