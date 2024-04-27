@@ -30,6 +30,23 @@ export default async function Account() {
     return redirect('/signin');
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const key = event.target.key.value;
+    const prompt = event.target.prompt.value;
+
+    // Post data to the server-side API
+    const response = await fetch('/api/submitContent', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ key, prompt }),
+    });
+
+    const data = await response.json();
+    console.log(data); // Process or use response data as needed.
+  };
   return (
     <section className="mb-32 bg-black">
       <div className="max-w-6xl px-4 py-8 mx-auto sm:px-6 sm:pt-24 lg:px-8">
@@ -41,7 +58,19 @@ export default async function Account() {
         <div className="w-full max-w-3xl m-auto my-8 border rounded-md p border-zinc-700" >
           {/* Replace "Extra Content Here" with whatever special content you want to show */}
           <h2>Special Access Content</h2>
-
+              <form onSubmit={handleSubmit}>
+                 <label>
+                   Key:
+                   <input type="text" name="key" required />
+                 </label>
+                 <br />
+                 <label>
+                   Prompt:
+                   <input type="text" name="prompt" required />
+                 </label>
+                 <br />
+                 <button type="submit">Submit</button>
+              </form>
         </div>
       )}
         </div>
