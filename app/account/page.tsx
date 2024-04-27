@@ -41,7 +41,7 @@ export default async function Account() {
         <div className="w-full max-w-3xl m-auto my-8 border rounded-md p border-zinc-700" >
           {/* Replace "Extra Content Here" with whatever special content you want to show */}
           <h2>Special Access Content</h2>
-          <p><section id="about" class="py-12 px-6 bg-white">
+          <p><div id="about" class="py-12 px-6 bg-white">
     <div class="container mx-auto">
         <h3 class="text-2xl font-semibold text-center mb-6">About Us</h3>
         <form id="ajaxForm" class="mt-6">
@@ -56,7 +56,7 @@ export default async function Account() {
             <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Submit</button>
         </form>
     </div>
-</section>
+</div>
 
 <script>
     document.getElementById('ajaxForm').addEventListener('submit', function(e) {
