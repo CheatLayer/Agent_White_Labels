@@ -30,7 +30,7 @@ export default async function Account() {
     return redirect('/signin');
   }
 
-  const handleSubmit = async (event) => {
+const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const key = event.target.key.value;
     const prompt = event.target.prompt.value;
