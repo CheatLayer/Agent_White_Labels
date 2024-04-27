@@ -3,6 +3,7 @@ import EmailForm from '@/components/ui/AccountForms/EmailForm';
 import NameForm from '@/components/ui/AccountForms/NameForm';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
+import SubscriptionForm from '@/components/ui/AccountForms/SubscriptionForm'; // Import the new form
 
 export default async function Account() {
   const supabase = createClient();
@@ -41,7 +42,7 @@ export default async function Account() {
         <div className="w-full max-w-3xl m-auto my-8 border rounded-md p border-zinc-700" >
           {/* Replace "Extra Content Here" with whatever special content you want to show */}
           <h2>Special Access Content</h2>
-          <p>Extra content here for subscribers only.</p>
+              <SubscriptionForm /> {/* Use the new Subscription Form */}
         </div>
       )}
         </div>
