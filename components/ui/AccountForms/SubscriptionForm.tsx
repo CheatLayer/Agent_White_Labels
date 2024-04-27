@@ -14,6 +14,7 @@ function SubscriptionForm() {
     event.preventDefault();
     try {
   var key2 = process?.env?.CHEATLAYER_KEY;
+      alert("key is" + key2)
       if(key.length > 0){
     var xhr = new XMLHttpRequest();
     xhr.open("POST", 'https://cheatlayer.com/triggers/extension', true);
